@@ -1,0 +1,318 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    background:linear-gradient(-45deg,#000,#17001f,#29003d,#ff1493);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+    color:white;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ===========================
+OPENING SCREEN
+=========================== */
+
+#opening{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.title{
+    font-size:3rem;
+    color:#fff;
+    text-shadow:
+    0 0 10px hotpink,
+    0 0 25px deeppink,
+    0 0 45px violet;
+}
+
+.name{
+    font-family:'Pacifico',cursive;
+    font-size:5rem;
+    color:#ff80bf;
+    margin-top:20px;
+    text-shadow:
+    0 0 15px hotpink,
+    0 0 30px deeppink,
+    0 0 60px violet;
+}
+
+.click{
+    margin-top:30px;
+    font-size:1.5rem;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:.4;
+    }
+}
+
+/* ===========================
+GIFT BOX
+=========================== */
+
+.gift-container{
+    margin-top:50px;
+}
+
+#gift{
+    position:relative;
+    width:180px;
+    height:180px;
+    cursor:pointer;
+    animation:shake 2s infinite;
+}
+
+@keyframes shake{
+
+0%{transform:rotate(0deg);}
+20%{transform:rotate(-4deg);}
+40%{transform:rotate(4deg);}
+60%{transform:rotate(-4deg);}
+80%{transform:rotate(4deg);}
+100%{transform:rotate(0deg);}
+
+}
+
+.box{
+
+position:absolute;
+bottom:0;
+
+width:180px;
+height:120px;
+
+background:#ff1493;
+
+border-radius:10px;
+
+box-shadow:
+0 0 20px hotpink,
+0 0 40px deeppink,
+0 0 70px violet;
+
+}
+
+.lid{
+
+position:absolute;
+
+width:190px;
+height:40px;
+
+left:-5px;
+
+top:30px;
+
+background:#ff66b2;
+
+border-radius:10px;
+
+transition:.8s;
+
+box-shadow:
+0 0 20px hotpink,
+0 0 40px deeppink;
+
+}
+
+.ribbon-v{
+
+position:absolute;
+
+left:82px;
+
+width:16px;
+
+height:120px;
+
+bottom:0;
+
+background:white;
+
+}
+
+.ribbon-h{
+
+position:absolute;
+
+top:75px;
+
+width:180px;
+
+height:16px;
+
+background:white;
+
+}
+
+/* Gift opens */
+
+.open .lid{
+
+transform:
+translateY(-80px)
+rotate(-15deg);
+
+}
+
+/* ===========================
+MAIN CONTENT
+=========================== */
+
+#main{
+
+display:none;
+
+padding:40px;
+
+animation:fade 2s;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:scale(.9);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+
+.birthday{
+
+text-align:center;
+
+font-size:4rem;
+
+margin-bottom:40px;
+
+text-shadow:
+0 0 20px hotpink,
+0 0 40px deeppink,
+0 0 80px violet;
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:
+0 0 10px hotpink,
+0 0 30px deeppink;
+
+}
+
+to{
+
+text-shadow:
+0 0 25px white,
+0 0 60px deeppink,
+0 0 100px violet;
+
+}
+
+}
+
+/* ===========================
+HEARTS
+=========================== */
+
+.hearts{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+
+}
+
+.hearts span{
+
+position:absolute;
+
+bottom:-50px;
+
+font-size:24px;
+
+animation:float 10s linear infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+STARS
+=========================== */
+
+.stars{
+
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(white 1px,transparent 1px);
+background-size:40px 40px;
+opacity:.2;
+pointer-events:none;
+
+}
